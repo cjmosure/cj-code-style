@@ -1,0 +1,53 @@
+# CJ's Code Style
+
+A collection of configurations for my personal coding style.
+
+## Eslint
+
+### Install
+
+Install with the package manager of your choosing:
+
+```shell
+pnpm add @cjmosure/style
+```
+
+### Standard Javascript
+
+```javascript
+// .eslintrc.js
+const { generateEslintConfig } = require("./src/eslint");
+
+module.exports = generateEslintConfig();
+```
+
+### React
+
+```javascript
+// .eslintrc.js
+const { generateEslintReactConfig } = require("./src/eslint");
+
+module.exports = generateEslintReactConfig();
+```
+
+### Extending
+
+You can pass overrides to the `generateEslintConfig()` or `generateEslintReactConfig()` functions as a parameter. Overrides are deep-merged using Lodash merge. For example:
+
+```javascript
+// .eslintrc.js
+const { generateEslintReactConfig } = require("./src/eslint");
+
+module.exports = generateEslintConfig({
+  rules: {
+    "@typescript-eslint/no-array-constructor": "off",
+  },
+});
+```
+
+## Future
+
+[ ] Refactor into https://eslint.style/
+[ ] fix: @typescript-eslint/no-extra-semi
+
+https://eslint.style/

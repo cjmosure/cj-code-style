@@ -33,20 +33,52 @@ module.exports = {
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": "error",
     "@typescript-eslint/ban-ts-comment": "error",
-    "@typescript-eslint/ban-types": "error",
     "@typescript-eslint/consistent-type-imports": [
       "error",
       { fixStyle: "inline-type-imports", prefer: "type-imports" },
     ],
     "@typescript-eslint/no-array-constructor": "error",
     "@typescript-eslint/no-empty-interface": "error",
+    "@typescript-eslint/no-empty-object-type": "error",
     "@typescript-eslint/no-explicit-any": "error",
-    "@typescript-eslint/no-extra-semi": "error",
+    // "@typescript-eslint/no-extra-semi": "error",
     "@typescript-eslint/no-inferrable-types": "error",
     "@typescript-eslint/no-misused-new": "error",
     "@typescript-eslint/no-namespace": "error",
+    "@typescript-eslint/no-restricted-types": [
+      "error",
+      {
+        types: {
+          "{}": "Avoid using the empty object type `{}`.",
+          Boolean: {
+            fixWith: "boolean",
+            message: "Use 'boolean' instead.",
+          },
+          Function:
+            "Avoid using the `Function` type because it provides no type safety.",
+          Number: {
+            fixWith: "number",
+            message: "Use 'number' instead.",
+          },
+          Object: {
+            fixWith: "object",
+            message: "Use 'object' instead.",
+          },
+          String: {
+            fixWith: "string",
+            message: "Use 'string' instead.",
+          },
+          Symbol: {
+            fixWith: "symbol",
+            message: "Use 'symbol' instead.",
+          },
+        },
+      },
+    ],
     "@typescript-eslint/no-this-alias": "error",
+    "@typescript-eslint/no-unsafe-function-type": "error",
     "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-wrapper-object-types": "error",
     "@typescript-eslint/prefer-as-const": "error",
     "@typescript-eslint/prefer-namespace-keyword": "error",
     "@typescript-eslint/triple-slash-reference": "error",

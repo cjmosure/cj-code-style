@@ -1,0 +1,68 @@
+[user]
+    name = CJ Mosure
+    useConfigOnly = true
+[push]
+    default = current
+[core]
+    editor = code
+    compression = 0
+	  autocrlf = input
+	  excludesfile = ~/.gitignore_global
+	  ignorecase = false
+[advice]
+	  detachedHead = false
+[pager]
+    log = less
+    branch = less
+[init]
+	  defaultBra  nch = main
+[fetch]
+    prune = true
+    writeCommitGraph = true
+[pull]
+	  ff = only
+[alias]
+    tree = log --graph --pretty=oneline --abbrev-commit
+    a = add
+    ap = -c color.diff=true add --patch
+    b = branch
+    ba = branch -a
+    c = commit -v
+    car = commit --amend --no-edit
+    cmsg = commit -m
+    co = checkout
+    dc = diff --word-diff-regex=.
+    dca = diff --cached
+    dcac = diff --cached --word-diff-regex=.
+    dcaw = diff --cached --word-diff
+    dw = diff --word-diff
+    f = fetch
+    fa = fetch --all --prune
+    fp = fetch --prune
+    l = -c color.diff=true log
+    lg = -c color.diff=true log --oneline --decorate --graph
+    lga = -c color.diff=true log --oneline --decorate --graph --all
+    lgb = -c color.diff=true log --oneline --decorate --graph --branches
+    lo = -c color.diff=true log --oneline --decorate
+    mff = merge --ff-only --no-stat
+    # Safer alternative to --force
+    pf = push --force-with-lease
+    r = remote
+    ra = remote add
+    rb = ! "f() { \
+      git rebase -i `git merge-base HEAD $1`; \
+    }; f"
+    ; rbm = ! "git rebase -i `git merge-base HEAD master`"
+    ; rbt = ! "git rebase -i `git merge-base HEAD trunk`"
+    re = restore
+    rmv = remote rename
+    rrm = remote remove
+    rv = remote -v
+    s = status --short --branch
+    sc = show --compact-summary
+    sdc = show --word-diff-regex=.
+    sdw = show --word-diff
+    sp = sparse-checkout
+    st = status
+    sw = switch
+    wk = worktree

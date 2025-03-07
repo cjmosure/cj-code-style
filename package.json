@@ -1,8 +1,8 @@
 {
-  "name": "cj-code-style",
+  "name": "@cjmosure/style",
   "version": "1.0.0",
   "description": "My personal code style helpers",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "jest --coverage --testMatch \"**/tests/**/*.spec.js\"",
     "lint": "eslint . --ext .js",
@@ -14,9 +14,9 @@
     "lodash": "^4.17.21"
   },
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "6.21.0",
-    "@typescript-eslint/parser": "6.21.0",
-    "eslint": "8.45.0",
+    "@typescript-eslint/eslint-plugin": "8.26.0",
+    "@typescript-eslint/parser": "8.26.0",
+    "eslint": "^8.57.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-import-resolver-typescript": "3.8.3",
     "eslint-plugin-import": "2.31.0",
@@ -28,8 +28,8 @@
     "eslint-plugin-react": "7.37.4",
     "eslint-plugin-react-hooks": "5.2.0",
     "eslint-plugin-storybook": "0.6.15",
-    "eslint-plugin-unused-imports": "4.1.4",
-    "prettier": "3.5.3"
+    "prettier": "3.5.3",
+    "eslint-plugin-unused-imports": "4.1.4"
   },
   "devDependencies": {
     "jest": "^29.7.0"
