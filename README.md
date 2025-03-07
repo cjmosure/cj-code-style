@@ -49,5 +49,4 @@ module.exports = generateEslintConfig({
 
 [ ] Refactor into https://eslint.style/
 [ ] fix: @typescript-eslint/no-extra-semi
-
-https://eslint.style/
+[ ] Create a install utility that can create an eslint config, install the package, add npm scripts
