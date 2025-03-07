@@ -1,0 +1,37 @@
+{
+  "name": "cj-code-style",
+  "version": "1.0.0",
+  "description": "My personal code style helpers",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage --testMatch \"**/tests/**/*.spec.js\"",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix"
+  },
+  "author": "CJ Mosure <cj@mosure.org>",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "6.21.0",
+    "@typescript-eslint/parser": "6.21.0",
+    "eslint": "8.45.0",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-import-resolver-typescript": "3.6.0",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-no-only-tests": "3.3.0",
+    "eslint-plugin-perfectionist": "2.10.0",
+    "eslint-plugin-prefer-arrow-functions": "3.3.2",
+    "eslint-plugin-prettier": "5.0.0",
+    "eslint-plugin-react": "7.31.11",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-storybook": "0.6.15",
+    "eslint-plugin-unused-imports": "3.0.0",
+    "prettier": "3.0.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
