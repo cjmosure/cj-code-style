@@ -49,6 +49,7 @@ module.exports = generateEslintConfig({
 
 ## Future
 
-[ ] Refactor into https://eslint.style/
-[ ] fix: @typescript-eslint/no-extra-semi
-[ ] Create a install utility that can create an eslint config, install the package, add npm scripts "npx @cjmosure/style init"
+- Refactor into https://eslint.style/
+- fix: @typescript-eslint/no-extra-semi
+- Create a install utility that can create an eslint config, install the package, add npm scripts "npx @cjmosure/style init"
+- Coverage badge: https://github.com/marketplace/actions/coverage-badge
