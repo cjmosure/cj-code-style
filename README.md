@@ -1,5 +1,7 @@
 # CJ's Code Style
 
+![ci](https://github.com/cjmosure/cj-code-style/actions/workflows/ci.yml/badge.svg)
+
 A collection of configurations for my personal coding style.
 
 ## Eslint
@@ -49,4 +51,4 @@ module.exports = generateEslintConfig({
 
 [ ] Refactor into https://eslint.style/
 [ ] fix: @typescript-eslint/no-extra-semi
-[ ] Create a install utility that can create an eslint config, install the package, add npm scripts
+[ ] Create a install utility that can create an eslint config, install the package, add npm scripts "npx @cjmosure/style init"
