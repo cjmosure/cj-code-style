@@ -31,7 +31,8 @@
     "eslint-plugin-react-hooks": "5.2.0",
     "eslint-plugin-storybook": "0.6.15",
     "eslint-plugin-unused-imports": "4.1.4",
-    "prettier": "3.5.3"
+    "prettier": "3.5.3",
+    "@stylistic/eslint-plugin": "^3.1.0"
   },
   "devDependencies": {
     "jest": "^29.7.0"
