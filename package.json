@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "My personal code style helpers",
   "main": "src/index.js",
-  "type": "module",
   "bin": {
     "cj-style-init": "./bin/install.js"
   },
