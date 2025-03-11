@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['plugin:prettier/recommended', 'plugin:perfectionist/recommended-natural'],
+  extends: ['plugin:perfectionist/recommended-natural'],
   ignorePatterns: [
     '**/node_modules',
     '**/dist',
@@ -28,21 +28,41 @@ module.exports = {
   ],
   rules: {
     // Stylistic
+
+    '@stylistic/array-bracket-newline': ['error', 'consistent'],
+    '@stylistic/array-bracket-spacing': ['error', 'never'],
+    '@stylistic/array-element-newline': ['error', 'consistent'],
+    '@stylistic/arrow-parens': ['error', 'always'],
+    '@stylistic/arrow-spacing': 'error',
+    '@stylistic/block-spacing': 'error',
+    '@stylistic/brace-style': 'error',
+    '@stylistic/comma-dangle': ['error', 'always-multiline'],
+    '@stylistic/comma-spacing': 'error',
+    '@stylistic/comma-style': ['error', 'last'],
+    '@stylistic/computed-property-spacing': ['error', 'never'],
+    '@stylistic/curly-newline': ['error', 'always'], // revisit
+    '@stylistic/dot-location': ['error', 'property'],
     '@stylistic/eol-last': ['error', 'always'],
+    '@stylistic/function-call-spacing': ['error', 'never'],
+    '@stylistic/function-paren-newline': ['error', 'multiline'],
+    '@stylistic/generator-star-spacing': ['error', {'after': true, 'before': false}],
+    '@stylistic/implicit-arrow-linebreak': ['error', 'beside'],
     '@stylistic/indent': ['error', 2],
+    '@stylistic/indent-binary-ops': ['error', 2],
     '@stylistic/no-extra-semi': 'error',
+    '@stylistic/no-multiple-empty-lines': 'error',
     '@stylistic/quotes': [
       'error',
       'single',
       {
-        avoidEscape: true,
         allowTemplateLiterals: 'always',
+        avoidEscape: true,
       },
     ],
 
     // Typescript
-    '@typescript-eslint/adjacent-overload-signatures': 'error',
 
+    '@typescript-eslint/adjacent-overload-signatures': 'error',
     '@typescript-eslint/array-type': 'error',
     '@typescript-eslint/ban-ts-comment': 'error',
     '@typescript-eslint/consistent-type-imports': [
@@ -93,10 +113,14 @@ module.exports = {
     '@typescript-eslint/prefer-namespace-keyword': 'error',
     '@typescript-eslint/triple-slash-reference': 'error',
     'arrow-body-style': ['error', 'as-needed'],
+
     // ES6
+
     'constructor-super': 'error',
     curly: ['error', 'multi-or-nest', 'consistent'],
+
     // Best Practices
+
     'default-case-last': 'error',
     eqeqeq: 'error',
     'for-direction': 'error',
@@ -105,19 +129,21 @@ module.exports = {
     'import/first': 'error',
     'import/newline-after-import': 'error',
     'import/no-default-export': 'error',
+
     // Imports and exports
+
     'import/no-duplicates': 'error',
     'no-await-in-loop': 'error',
     'no-class-assign': 'error',
     'no-compare-neg-zero': 'error',
     'no-cond-assign': 'error',
-    'no-console': 'error',
     'no-const-assign': 'error',
     'no-constant-condition': 'error',
     'no-control-regex': 'error',
     'no-debugger': 'error',
 
     // Variables
+
     'no-delete-var': 'error',
     'no-dupe-args': 'error',
     'no-dupe-class-members': 'error',
@@ -136,23 +162,22 @@ module.exports = {
     'no-inner-declarations': 'error',
     'no-invalid-regexp': 'error',
     'no-irregular-whitespace': 'error',
-
     'no-loss-of-precision': 'error',
     'no-misleading-character-class': 'error',
     'no-multi-spaces': 'error',
     'no-new-symbol': 'error',
     'no-obj-calls': 'error',
     'no-octal': 'error',
+
     // Unit tests
+
     'no-only-tests/no-only-tests': 'error',
     'no-promise-executor-return': 'error',
     'no-regex-spaces': 'error',
     'no-self-assign': 'error',
-
     'no-setter-return': 'error',
     'no-shadow-restricted-names': 'error',
     'no-sparse-arrays': 'error',
-
     'no-template-curly-in-string': 'off',
     'no-this-before-super': 'error',
     'no-unexpected-multiline': 'error',
@@ -161,7 +186,6 @@ module.exports = {
     'no-unsafe-negation': 'error',
     'no-unsafe-optional-chaining': 'error',
     'no-unused-labels': 'error',
-
     'no-useless-backreference': 'error',
     'no-useless-catch': 'error',
     'no-useless-escape': 'error',
@@ -220,7 +244,6 @@ module.exports = {
     ],
     'use-isnan': 'error',
     'valid-typeof': 'error',
-
     yoda: 'error',
   },
 };
