@@ -56,14 +56,16 @@ for (const key in object)
 
 // Use try...catch
 try {
- throw new Error('Something went wrong'); 
+  throw new Error('Something went wrong');
 } catch (error) {
- console.error(error); 
+  console.error(error);
 }
 
 // Use async/await
 const asyncFunction = async () => {
-  await new Promise((resolve) => {setTimeout(resolve, 1000);});
+  await new Promise((resolve) => {
+    setTimeout(resolve, 1000); 
+  });
   return 'Async operation complete';
 };
 
@@ -87,7 +89,7 @@ const _unusedVariable = 'This variable is not used';
 
 // Function with no return
 const functionWithNoReturn = () => {
- console.log('This function does not return anything'); 
+  console.log('This function does not return anything');
 };
 
 functionWithNoReturn();

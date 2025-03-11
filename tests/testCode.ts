@@ -30,22 +30,30 @@ const _undefinedVar = undefined;
 const _anyVar: any = 'anything goes here';
 const _unknownVar: unknown = 'type-safe any';
 const _neverVar: never = (() => {
- throw new Error() 
+  throw new Error()
 })();
 const objectVar: object = {};
 const arrayVar: string[] = ['a', 'b', 'c'];
-const tupleVar: [string, number] = ['tuple', 123];
-const genericVar: number[] = [1, 2, 3];
-const unionVar: number | string = Math.random() > 0.5 ? 'string' : 123;
-const intersectionVar: { a: string } & { b: number } = { a: 'a', b: 123 };
-const literalVar: 'literal' = 'literal';
-const functionVar: () => void = () => {};
+const _tupleVar: [string, number] = ['tuple', 123];
+const _genericVar: number[] = [1, 2, 3];
+const _unionVar: number | string = Math.random() > 0.5 ? 'string' : 123;
+const _intersectionVar: { a: string } & { b: number } = { a: 'a', b: 123 };
+const _literalVar: 'literal' = 'literal' as const;
+const _functionVar: () => void = () => {
+};
 
 // Type aliases and interfaces
 type MyType = {
   method(): void;
   prop1: string;
   prop2?: number;
+};
+
+const _usage: MyType = {
+  method: () => {
+    console.log('method');
+  },
+  prop1: 'property',
 };
 
 interface MyInterface {
@@ -79,12 +87,18 @@ class MyClass implements MyInterface {
     this.readonlyVar = 'readonly';
   }
 
-  method(): void { console.log('method'); }
+  method(): void {
+    console.log('method');
+  }
 
   // Getter and setter
-  get protectedProp(): boolean { return this._protectedProp; }
+  get protectedProp(): boolean {
+    return this._protectedProp;
+  }
 
-  set protectedProp(value: boolean) { this._protectedProp = value; }
+  set protectedProp(value: boolean) {
+    this._protectedProp = value;
+  }
 }
 
 // Enum
@@ -108,31 +122,41 @@ const functionExpression = (param: string): string => param;
 const arrowFunction = (param: string): string => param;
 
 const shortArrowFunction = (param: string): string => param;
+shortArrowFunction('test');
 
 // Rest parameters
 const restFunction = (...args: number[]): number => args.reduce((sum, current) => sum + current, 0);
+restFunction(1, 2, 3, 4);
 
 // Default parameters
-const defaultParams = (param1 = 'default', param2 = 0): void => { console.log(param1, param2); };
+const defaultParams = (param1 = 'default', param2 = 0): void => {
+  console.log(param1, param2);
+};
+defaultParams();
 
 // Optional parameters
 const optionalParams = (required: string, optional?: string): string => optional ? required + optional : required;
+optionalParams('required');
+
 
 // Function overloads
 function overloaded(param: string): string;
 function overloaded(param: number): number;
 function overloaded(param: number | string): number | string {
- return param; 
+  return param;
 }
+overloaded('string');
 
 // Generic functions
 const genericFunction = <T>(param: T): T => param;
 
 // Async functions
-const asyncFunction = async (): Promise<string> => new Promise((resolve) => { setTimeout(() => resolve('resolved'), 100); });
+const asyncFunction = async (): Promise<string> => new Promise((resolve) => {
+  setTimeout(() => resolve('resolved'), 100);
+});
 
 // Generator functions
-function* generatorFunction(): Generator<number> {
+function* _generatorFunction(): Generator<number> {
   yield 1;
   yield 2;
   yield 3;
@@ -149,12 +173,13 @@ else if (!booleanVar)
 else
   console.log('else branch');
 
-
 // Ternary operator
-const ternaryResult = booleanVar ? 'true' : 'false';
+const _ternaryResult = booleanVar ? 'true' : 'false';
 
 // Switch statements
-switch (numberVar) {
+let numby = 2;
+numby = 1;
+switch (numby) {
   case 1:
     console.log('one');
     break;
@@ -199,18 +224,18 @@ while (doWhileCounter < 5);
 
 // Try...catch...finally
 try {
- throw new Error('error'); 
+  throw new Error('error');
 } catch (error) {
- console.error(error); 
+  console.error(error);
 } finally {
- console.log('finally'); 
+  console.log('finally');
 }
 
 // ==============================
 // COMMON ESLINT ISSUES
 // ==============================
 // Unused variables
-const unusedVar = 'I am not used anywhere';
+const _unusedVar = 'I am not used anywhere';
 
 // Console logs in production code
 console.log('debugging statement');
@@ -218,13 +243,15 @@ console.warn('warning');
 console.error('error');
 
 // Unreachable code
-const unreachableCode = () => {
+const _unreachableCode = () => {
   return 'early return';
+  // eslint-disable-next-line no-unreachable
   console.log('I will never be executed'); // Unreachable code
 };
 
 // No-op functions
-const noOp = () => {};
+const _noOp = () => {
+};
 
 // Empty block statements
 if (booleanVar) {
@@ -232,10 +259,10 @@ if (booleanVar) {
 }
 
 // Overly complex expressions
-const complex = booleanVar ? (numberVar > 10 ? 'big' : (numberVar < 5 ? 'small' : 'medium')) : 'not applicable';
+const _complex = booleanVar ? (numberVar > 10 ? 'big' : (numberVar < 5 ? 'small' : 'medium')) : 'not applicable';
 
 // Re-assignment of function parameters
-const reassignParam = (param: string) => {
+const _reassignParam = (param: string) => {
   param = 'reassigned'; // Reassigning function parameters
   return param;
 };
@@ -245,7 +272,7 @@ const evalCode = 'console.log("eval")';
 eval(evalCode);
 
 // Lack of exhaustive handling in switch
-const nonExhaustiveSwitch = (dir: Direction) => {
+const _nonExhaustiveSwitch = (dir: Direction) => {
   switch (dir) {
     case Direction.Up:
       return 'up';
@@ -294,7 +321,7 @@ try {
 try {
   // Risky operation
 } catch (error) {
- console.error(error); // Just logging without proper handling
+  console.error(error); // Just logging without proper handling
 }
 
 // ==============================
@@ -350,11 +377,11 @@ const isString = (value: unknown): value is string => typeof value === 'string';
 
 // Declaration merging
 interface MergeableInterface {
- prop1: string; 
+  prop1: string;
 }
 
 interface MergeableInterface {
- prop2: number; 
+  prop2: number;
 }
 
 // ==============================
@@ -444,8 +471,8 @@ function log(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
 class DecoratedClass {
   @log
   public method(arg: string) {
- return `Method called with ${arg}`; 
-}
+    return `Method called with ${arg}`;
+  }
 }
 
 // ==============================
@@ -453,11 +480,17 @@ class DecoratedClass {
 // ==============================
 // Mixing promises and callbacks
 const mixedAsyncPatterns = () => {
-  const promise = new Promise((resolve) => {setTimeout(() => { resolve('result'); }, 100);});
+  const promise = new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('result');
+    }, 100);
+  });
 
   promise.then((result) => {
     // Nested callback
-    setTimeout(() => { console.log(result); }, 100);
+    setTimeout(() => {
+      console.log(result);
+    }, 100);
   });
 };
 
@@ -469,7 +502,9 @@ const callbackHell = () => {
       console.log('second');
       setTimeout(() => {
         console.log('third');
-        setTimeout(() => { console.log('fourth'); }, 100);
+        setTimeout(() => {
+          console.log('fourth');
+        }, 100);
       }, 100);
     }, 100);
   }, 100);
@@ -496,7 +531,9 @@ const deeplyNested = (a: boolean, b: boolean, c: boolean, d: boolean) => {
       // More nesting...
       return 'complex condition';
     }
-  } else { return 'a false'; }
+  } else {
+    return 'a false';
+  }
 };
 
 // Large objects with repetitive structure
