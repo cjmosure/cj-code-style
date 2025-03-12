@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "My personal code style helpers",
   "main": "src/index.js",
+  "bin": {
+    "cj-style-init": "./bin/install.js"
+  },
   "scripts": {
     "test": "jest --coverage --testMatch \"**/tests/**/*.spec.js\"",
     "lint": "eslint . --ext .js",
@@ -18,7 +21,6 @@
     "@typescript-eslint/eslint-plugin": "8.26.0",
     "@typescript-eslint/parser": "8.26.0",
     "eslint": "^8.57.0",
-    "eslint-config-prettier": "9.0.0",
     "eslint-import-resolver-typescript": "3.8.3",
     "eslint-plugin-import": "2.31.0",
     "eslint-plugin-jsx-a11y": "6.10.2",
@@ -26,12 +28,11 @@
     "eslint-plugin-no-only-tests": "3.3.0",
     "eslint-plugin-perfectionist": "2.10.0",
     "eslint-plugin-prefer-arrow-functions": "3.3.2",
-    "eslint-plugin-prettier": "5.2.3",
     "eslint-plugin-react": "7.37.4",
     "eslint-plugin-react-hooks": "5.2.0",
     "eslint-plugin-storybook": "0.6.15",
     "eslint-plugin-unused-imports": "4.1.4",
-    "prettier": "3.5.3"
+    "@stylistic/eslint-plugin": "^3.1.0"
   },
   "devDependencies": {
     "jest": "^29.7.0"
