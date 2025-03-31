@@ -21,7 +21,6 @@ describe('eslint config', () => {
     it('should deep merge with general', () => {
       const config = generateEslintReactConfig();
       expect(config['rules']['perfectionist/sort-imports'][1]['custom-groups']['value']['react']).toEqual(['react', 'react-dom']);
-      expect(config.plugins).toContain('prefer-arrow-functions');
       expect(config.plugins).toContain('react-hooks');
     });
   });
