@@ -22,13 +22,11 @@ module.exports = {
     '@typescript-eslint',
     'import',
     'unused-imports',
-    'prefer-arrow-functions',
     'perfectionist',
     'no-only-tests',
   ],
   rules: {
     // Stylistic
-
     '@stylistic/array-bracket-newline': ['error', 'consistent'],
     '@stylistic/array-bracket-spacing': ['error', 'never'],
     '@stylistic/array-element-newline': ['error', 'consistent'],
@@ -228,7 +226,6 @@ module.exports = {
         type: 'natural',
       },
     ],
-    'prefer-arrow-functions/prefer-arrow-functions': 'error',
     radix: 'error',
     'require-yield': 'error',
     'unused-imports/no-unused-imports': 'error',
