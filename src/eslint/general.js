@@ -22,7 +22,6 @@ module.exports = {
     '@typescript-eslint',
     'import',
     'unused-imports',
-    'prefer-arrow-functions',
     'perfectionist',
     'no-only-tests',
   ],
