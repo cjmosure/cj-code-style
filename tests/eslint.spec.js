@@ -22,6 +22,7 @@ describe('eslint config', () => {
       const config = generateEslintReactConfig();
       expect(config['rules']['perfectionist/sort-imports'][1]['custom-groups']['value']['react']).toEqual(['react', 'react-dom']);
       expect(config.plugins).toContain('react-hooks');
+      expect(config.plugins).toContain('@typescript-eslint');
     });
   });
 });

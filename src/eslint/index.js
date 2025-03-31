@@ -1,13 +1,32 @@
-const { merge } = require('lodash');
+const { merge, union } = require('lodash');
 const general = require('./general');
 const react = require('./react');
 const next = require('./next');
 
-const generateEslintConfig = (overrides = {}) => merge(general, overrides);
+// Helper to merge configs while properly combining array properties
+const mergeConfigs = (base, ...configs) => {
+  const merged = merge({}, base, ...configs);
 
-const generateEslintReactConfig = (overrides = {}) => merge(general, react, overrides);
+  // Combine plugins arrays from all configs
+  merged.plugins = union(
+    base.plugins || [],
+    ...configs.map((config) => config.plugins || []),
+  );
 
-const generateEslintNextConfig = (overrides = {}) => merge(general, react, next, overrides);
+  // Combine extends arrays from all configs
+  merged.extends = union(
+    base.extends || [],
+    ...configs.map((config) => config.extends || []),
+  );
+
+  return merged;
+};
+
+const generateEslintConfig = (overrides = {}) => mergeConfigs(general, overrides);
+
+const generateEslintReactConfig = (overrides = {}) => mergeConfigs(general, react, overrides);
+
+const generateEslintNextConfig = (overrides = {}) => mergeConfigs(general, react, next, overrides);
 
 module.exports = {
   generateEslintConfig,
