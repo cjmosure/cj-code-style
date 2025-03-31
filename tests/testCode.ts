@@ -283,12 +283,13 @@ const _nonExhaustiveSwitch = (dir: Direction) => {
 };
 
 // Explicit any
-const explicitAny: any = 'I could be anything';
+const _explicitAny: unknown = 'I could be anything';
 
 // Implicit any
-const implicitAny = (param) => param + 1;
+const _implicitAny = (param) => param + 1;
 
 // Dead code
+// eslint-disable-next-line no-constant-condition
 if (false)
   console.log('This will never execute');
 
