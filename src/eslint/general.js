@@ -227,7 +227,6 @@ module.exports = {
         type: 'natural',
       },
     ],
-    'prefer-arrow-functions/prefer-arrow-functions': 'error',
     radix: 'error',
     'require-yield': 'error',
     'unused-imports/no-unused-imports': 'error',
